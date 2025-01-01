@@ -39,11 +39,12 @@ io.on('connection', (socket) => {
         
         // Remove user from online users list
         delete onlineUsers[socket.id];
-        io.emit('updateOnlineUsers', Object.keys(onlineUsers)); // Broadcast updated online users list
+        io.emit('updateOnlineUsers', Object.keys(onlineUsers)); // Broadcast updated online users lists
     });
 });
 
 const PORT = process.env.PORT;
+
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
